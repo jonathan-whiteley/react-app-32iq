@@ -1,0 +1,23 @@
+.app {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.file-preview {
+  margin: 0 10px;
+}
+
+.app {
+  font-family: sans-serif;
+  text-align: center;
+}
