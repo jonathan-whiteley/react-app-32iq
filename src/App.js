@@ -1,6 +1,4 @@
-import './App.css';
-
-import "./styles.css";
+import "./index.css";
 import { init, AuthType } from "@thoughtspot/visual-embed-sdk";
 import { Route, Routes } from "react-router-dom";
 import BurgerMenu from "./components/burger/burgermenu";

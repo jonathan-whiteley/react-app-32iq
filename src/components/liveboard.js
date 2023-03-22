@@ -32,8 +32,8 @@ export default function Liveboard() {
       )} */}
 
       <LiveboardEmbed
-        frameParams={{ height: "200vw" }}
-        liveboardId={"45ca48c2-9f9b-4c9b-9229-685f918a1823"}
+        frameParams={{ height: "400vw" }}
+        liveboardId={"8ae61128-68d4-4c72-8dc3-b56998535850"}
         ref={embedRef}
         onLoad={onLoad}
         onLiveboardRendered={onRendered}

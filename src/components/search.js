@@ -7,7 +7,7 @@ export default function Search() {
       <h1>Search</h1>
       <SearchEmbed
         frameParams={{ hideDataSources: "true", height: "80vw" }}
-        answerId={"825b2344-5dde-4b60-b7c6-45aa10098a3f"}
+        answerId={"ee5cf121-f013-4243-917a-f8171bbc0b99"}
       />
     </div>
   );

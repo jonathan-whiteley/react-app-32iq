@@ -30,11 +30,15 @@ app.post('/image', uploadImage, (req, res) => {
     res.send('Image upload failed');
 });
 
+app.get("/api", (req, res) => {
+  res.json({ message: "Hello from server!" });
+});
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/dist/index.html'));
   })
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
