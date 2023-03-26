@@ -60,7 +60,7 @@ export class UppyComponent extends React.Component {
         color="primary"
          onClick={this.handleOpen}
          > 
-         <i className="tim-icons icon-cloud-download-93" /> Analyze Image
+         <i className="tim-icons icon-cloud-upload-94" /> Analyze Image
          </Button>
         <DashboardModal
           uppy={this.uppy}

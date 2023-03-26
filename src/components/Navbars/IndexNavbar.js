@@ -142,7 +142,7 @@ export default function IndexNavbar() {
             </NavItem> */}
             <NavItem>
               <UppyComponent>
-                <i className="tim-icons icon-cloud-download-93" /> Download
+                {/* <i className="tim-icons icon-cloud-upload-94" /> Download */}
               </UppyComponent>
             </NavItem>
           </Nav>
