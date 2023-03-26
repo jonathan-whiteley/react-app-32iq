@@ -4,8 +4,9 @@ import {
   useEmbedRef
 } from '@thoughtspot/visual-embed-sdk/react';
 import { EmbedEvent, Action } from "@thoughtspot/visual-embed-sdk";
-// import { Spin } from "antd";
+import { Spin } from "antd";
 // import "antd/es/spin/style/css";
+// import "./liveboard.css";
 
 export default function Liveboard() {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -22,17 +23,20 @@ export default function Liveboard() {
 
   return (
     <div>
-      <h1>Dashboard</h1>
-      {/* {isLoading ? (
+      <h1> 
+      •
+      </h1>
+      {isLoading ? (
         <div className="embedSpinner">
           <Spin size="large" />
         </div>
       ) : (
         ""
-      )} */}
+      )}
 
       <LiveboardEmbed
-        frameParams={{ height: "400vw" }}
+        frameParams={{width: "100vw" , height: "100vh"}}
+        // fullHeight= "true"
         liveboardId={"8ae61128-68d4-4c72-8dc3-b56998535850"}
         ref={embedRef}
         onLoad={onLoad}

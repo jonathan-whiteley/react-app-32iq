@@ -2,6 +2,8 @@
 // npm install @uppy/react
 
 import React , { Component }  from 'react'
+import { Link } from "react-router-dom";
+
 import Uppy from '@uppy/core'
 import XHRUpload from '@uppy/xhr-upload'
 import Webcam from '@uppy/webcam'
@@ -9,6 +11,8 @@ import Tus from "@uppy/tus";
 import Dashboard from '@uppy/dashboard'
 import '@uppy/core/dist/style.css'
 import '@uppy/dashboard/dist/style.css'
+
+import {Button} from "reactstrap";
 
 
 import { DashboardModal } from '@uppy/react'
@@ -50,7 +54,14 @@ export class UppyComponent extends React.Component {
   render () {
     return (
       <div>
-        <button type="button" onClick={this.handleOpen}>Upload Image</button>
+        {/* <h1>Upload</h1> */}
+        <Button 
+        className="nav-link d-none d-lg-block"
+        color="primary"
+         onClick={this.handleOpen}
+         > 
+         <i className="tim-icons icon-cloud-download-93" /> Analyze Image
+         </Button>
         <DashboardModal
           uppy={this.uppy}
           closeModalOnClickOutside
