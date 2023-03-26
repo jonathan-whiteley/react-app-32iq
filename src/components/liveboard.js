@@ -23,12 +23,10 @@ export default function Liveboard() {
 
   return (
     <div>
-      <h1> 
-      •
-      </h1>
-      <h1> 
-      •
-      </h1>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
       {isLoading ? (
         <div className="embedSpinner">
           <Spin size="large" />
