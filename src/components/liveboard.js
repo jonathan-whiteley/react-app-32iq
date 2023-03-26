@@ -26,6 +26,9 @@ export default function Liveboard() {
       <h1> 
       •
       </h1>
+      <h1> 
+      •
+      </h1>
       {isLoading ? (
         <div className="embedSpinner">
           <Spin size="large" />

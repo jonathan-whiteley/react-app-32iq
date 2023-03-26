@@ -4,8 +4,11 @@ import { SearchEmbed } from '@thoughtspot/visual-embed-sdk/react';
 export default function Search() {
   return (
     <div>
-      <h1>•
-        
+      <h1> 
+      •
+      </h1>
+      <h1> 
+      •
       </h1>
       <SearchEmbed
        
