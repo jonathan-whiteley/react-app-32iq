@@ -27,9 +27,13 @@ export class UppyComponent extends React.Component {
 
     this.uppy = new Uppy()
       .use(XHRUpload, { 
-        endpoint: 'http://localhost:3000/image',
+        endpoint: 'http://127.0.0.1:5000/prediction',
+        // endpoint: 'http://localhost:3001/image',
         fieldName: 'photo',
         formData: true, })
+      .on('complete', (result) => {
+          console.log('Upload result:', result)
+        })
 
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)

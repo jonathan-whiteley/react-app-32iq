@@ -103,6 +103,11 @@ export default function IndexNavbar() {
             </Row>
           </div>
           <Nav navbar>
+          <NavItem>
+              <UppyComponent>
+                {/* <i className="tim-icons icon-cloud-upload-94" /> Download */}
+              </UppyComponent>
+            </NavItem>
             <UncontrolledDropdown nav>
               <DropdownToggle
                 caret
@@ -140,11 +145,7 @@ export default function IndexNavbar() {
                 <i className="tim-icons icon-cloud-download-93" /> Analyze Image
               </Button>
             </NavItem> */}
-            <NavItem>
-              <UppyComponent>
-                {/* <i className="tim-icons icon-cloud-upload-94" /> Download */}
-              </UppyComponent>
-            </NavItem>
+
           </Nav>
         </Collapse>
       </Container>
