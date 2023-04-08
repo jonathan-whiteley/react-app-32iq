@@ -40,6 +40,7 @@
     "react-scripts": "5.0.1",
     "reactstrap": "8.7.1",
     "sass": "1.54.0",
+    "semantic-ui-react": "^2.1.4",
     "web-vitals": "2.1.4"
   },
   "peerDependencies": {
@@ -51,10 +52,10 @@
     "typescript": "4.7.4"
   },
   "scripts": {
-    "start": "../node_modules/.bin/react-scripts start",
-    "build": "../node_modules/.bin/react-scripts build",
-    "test": "../node_modules/.bin/react-scripts test",
-    "eject": "../node_modules/.bin/react-scripts eject"
+    "start": "node_modules/.bin/react-scripts start",
+    "build": "node_modules/.bin/react-scripts build",
+    "test": "node_modules/.bin/react-scripts test",
+    "eject": "node_modules/.bin/react-scripts eject"
   },
   "browserslist": {
     "production": [

@@ -1,5 +1,8 @@
-// import "./index.css";
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import Application32IQ from "./32iq";
+// import "./index.css";
 import "./assets/css/nucleo-icons.css";
 import "./assets/scss/blk-design-system-react.scss";
 import "./assets/demo/demo.css";
@@ -39,23 +42,26 @@ init({
 });
 
 function App() {
-  return (
-    <div className="App">
-      <header>
-        <IndexNavbar />
-      </header>
-      <Routes>
-        {/* <Route path="/" element={<h1>Home</h1>} /> */}
-        <Route index element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/liveboard" element={<Liveboard />} />
-        <Route path="/uppy" element={<UppyComponent />} />
-      </Routes>
-      {/* <footer>
-        <Footer />
-      </footer> */}
-    </div>
-  );
+  // return (
+  //   <div className="App">
+  //     <header>
+  //       <IndexNavbar />
+  //     </header>
+  //     <Switch>
+  //       {/* <Route path="/" element={<h1>Home</h1>} /> */}
+  //       <Route index element={<Home />} />
+  //       <Route path="/search" element={<Search />} />
+  //       <Route path="/liveboard" element={<Liveboard />} />
+  //       <Route path="/uppy" element={<UppyComponent />} />
+  //     </Switch>
+  //     {/* <footer>
+  //       <Footer />
+  //     </footer> */}
+  //   </div>
+  // );
+    return (
+          <Application32IQ />
+    );
 }
 
 export default App;
