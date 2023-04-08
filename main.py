@@ -1,11 +1,14 @@
 import os
-from flask import Flask, send_from_directory, render_template, request, make_response, jsonify
 from flask_cors import CORS
-from model import preprocess_img, predict_result
+from PIL import Image
+from ludwig.api import LudwigModel
+from torchvision import transforms
+from flask import Flask, request, send_from_directory, jsonify
 
-
+tensor_converter = transforms.ToTensor()
 app = Flask(__name__, static_folder='public')
 CORS(app)
+
 
 # # Home route
 @app.route('/', defaults={'path': ''})
@@ -16,26 +19,54 @@ def serve(path):
     else:
         return send_from_directory(app.static_folder, 'index.html')
 
-# Prediction route
-@app.route('/prediction', methods=['POST'])
-def predict_image_file():
+
+@app.route('/detect_abnormality', methods=['POST'])
+def detect_abnormality():
     try:
         if request.method == 'POST':
-            # in model.py
-            img = preprocess_img(request.files['file'].stream)
-            pred = predict_result(img) # in model.py
-            response = jsonify({'data': pred})
-            response.headers.add('Access-Control-Allow-Origin', '*')
-            # return response
-            return render_template("public/templates/result.html", predictions=str(pred))
+            model = LudwigModel.load("./../ludwig_model")
 
-    except:
+            image = Image.open(request.files['image'].stream)
+            img_tensor = tensor_converter(image)
+
+            model_input = {'radiographs_image_link': [img_tensor]}
+            preds = model.predict(model_input)
+
+            abnormality = bool(preds[0]["label_predictions"][0])
+            confidence = float(preds[0]["label_probability"][0])
+
+            response = jsonify({"abnormality": abnormality, "confidence": confidence})
+            response.headers.add('Access-Control-Allow-Origin', '*')
+
+            return response
+    except Exception as e:
         error = "File cannot be processed."
         response = jsonify({'some': 'data'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
-        # return render_template("public/templates/result.html", err=error)
+
+# Prediction route
+# @app.route('/prediction', methods=['POST'])
+# def predict_image_file():
+#     try:
+#         if request.method == 'POST':
+#             # in model.py
+#             img = preprocess_img(request.files['file'].stream)
+#             pred = predict_result(img) # in model.py
+#             response = jsonify({'data': pred})
+#             response.headers.add('Access-Control-Allow-Origin', '*')
+#             # return response
+#             return render_template("public/templates/result.html", predictions=str(pred))
+#
+#     except:
+#         error = "File cannot be processed."
+#         response = jsonify({'some': 'data'})
+#         response.headers.add('Access-Control-Allow-Origin', '*')
+#         return response
+#
+#         # return render_template("public/templates/result.html", err=error)
+
 
 if __name__ == '__main__':
     app.run(use_reloader=True, port=5000, threaded=True)

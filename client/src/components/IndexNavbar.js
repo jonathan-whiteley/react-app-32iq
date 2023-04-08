@@ -105,7 +105,7 @@ export default function IndexNavbar() {
           <div className="navbar-collapse-header">
             <Row>
               <Col className="collapse-brand" xs="6">
-                <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                <a href="client/src/components/IndexNavbar#pablo" onClick={(e) => e.preventDefault()}>
                   32iQ•
                 </a>
               </Col>
