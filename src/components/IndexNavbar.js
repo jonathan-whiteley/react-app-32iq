@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {UppyComponent} from "../uppy";
+import {UppyComponent} from "./uppy";
 
 // reactstrap components
 import {
@@ -129,10 +129,10 @@ export default function IndexNavbar() {
                   <i className="tim-icons icon-bullet-list-67" />
                   SearchiQ
                 </DropdownItem>
-                <DropdownItem tag={Link} to="/profile-page">
+                {/* <DropdownItem tag={Link} to="/profile-page">
                   <i className="tim-icons icon-single-02" />
                   About
-                </DropdownItem>
+                </DropdownItem> */}
               </DropdownMenu>
             </UncontrolledDropdown>
             {/* <NavItem>

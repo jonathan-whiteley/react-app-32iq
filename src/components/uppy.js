@@ -31,7 +31,7 @@ export class UppyComponent extends React.Component {
         // endpoint: 'http://localhost:3001/image',
         fieldName: 'photo',
         formData: true, })
-      .on('complete', (result) => {
+      .on('upload-success', (result) => {
           console.log('Upload result:', result)
         })
 

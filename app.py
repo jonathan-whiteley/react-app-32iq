@@ -21,12 +21,13 @@ def serve(path):
 def predict_image_file():
     try:
         if request.method == 'POST':
+            # in model.py
             img = preprocess_img(request.files['file'].stream)
-            pred = predict_result(img)
+            pred = predict_result(img) # in model.py
             response = jsonify({'data': pred})
             response.headers.add('Access-Control-Allow-Origin', '*')
-            return response
-            # return render_template("public/templates/result.html", predictions=str(pred))
+            # return response
+            return render_template("public/templates/result.html", predictions=str(pred))
 
     except:
         error = "File cannot be processed."

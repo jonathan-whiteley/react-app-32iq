@@ -2,12 +2,15 @@
 import "./assets/css/nucleo-icons.css";
 import "./assets/scss/blk-design-system-react.scss";
 import "./assets/demo/demo.css";
-import IndexNavbar from "./components/Navbars/IndexNavbar.js";
+import IndexNavbar from "./components/IndexNavbar.js";
+import Footer from "./components/Footer.js";
+
+import Home from "./pages/Home";
+
 
 
 import { init, AuthType } from "@thoughtspot/visual-embed-sdk";
 import { BrowserRouter, Route, Routes, Switch, Redirect } from "react-router-dom";
-import BurgerMenu from "./components/burger/burgermenu";
 import Search from "./components/search";
 import Liveboard from "./components/liveboard";
 import {UppyComponent} from "./components/uppy";
@@ -36,20 +39,21 @@ init({
 
 function App() {
   return (
-  <>
     <div className="App">
       <header>
-        {/* <BurgerMenu /> */}
         <IndexNavbar />
       </header>
       <Routes>
         {/* <Route path="/" element={<h1>Home</h1>} /> */}
+        <Route index element={<Home />} />
         <Route path="/search" element={<Search />} />
         <Route path="/liveboard" element={<Liveboard />} />
         <Route path="/uppy" element={<UppyComponent />} />
       </Routes>
+      {/* <footer>
+        <Footer />
+      </footer> */}
     </div>
-    </>
   );
 }
 
