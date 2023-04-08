@@ -6,6 +6,10 @@ import IndexNavbar from "./components/IndexNavbar.js";
 import Footer from "./components/Footer.js";
 
 import Home from "./pages/Home";
+import Result from "./pages/Result";
+import About from "./pages/About";
+
+
 
 
 
@@ -49,6 +53,10 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/liveboard" element={<Liveboard />} />
         <Route path="/uppy" element={<UppyComponent />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="/about-page" element={<About />} />
+
+
       </Routes>
       {/* <footer>
         <Footer />
@@ -59,25 +67,3 @@ function App() {
 
 export default App;
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;

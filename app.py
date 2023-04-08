@@ -27,7 +27,7 @@ def predict_image_file():
             response = jsonify({'data': pred})
             response.headers.add('Access-Control-Allow-Origin', '*')
             # return response
-            return render_template("public/templates/result.html", predictions=str(pred))
+            return render_template("result.html", predictions=str(pred))
 
     except:
         error = "File cannot be processed."

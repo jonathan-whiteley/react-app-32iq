@@ -31,9 +31,22 @@ export class UppyComponent extends React.Component {
         // endpoint: 'http://localhost:3001/image',
         fieldName: 'photo',
         formData: true, })
-      .on('upload-success', (result) => {
-          console.log('Upload result:', result)
-        })
+      // .on('upload-success', (file, response) => {
+  
+        // const room_url = {{ url_for("room_detail", id=room.id)|tojson }}
+
+      // });
+      .on('upload-success', (file, response) => {
+        console.log(file.name, response.uploadURL);
+        const img = new Image();
+        img.width = 300;
+        img.alt = file.id;
+        img.src = response.uploadURL;
+        document.body.appendChild(img);
+});
+      // .on('upload-success', (result) => {
+      //     console.log('Upload result:', result)
+      //   })
 
     this.handleOpen = this.handleOpen.bind(this)
     this.handleClose = this.handleClose.bind(this)

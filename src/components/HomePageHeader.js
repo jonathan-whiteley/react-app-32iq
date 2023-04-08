@@ -17,8 +17,10 @@
 */
 import React from "react";
 
+
+
 // reactstrap components
-import { Container } from "reactstrap";
+import { Badge, Container } from "reactstrap";
 
 export default function PageHeader() {
   return (
@@ -33,8 +35,11 @@ export default function PageHeader() {
       <Container>
         <div className="content-center brand">
           <h1 className="h1-seo">32iQ</h1>
+          <Badge color="primary"> </Badge> 
+          <span> <Badge color="primary"> </Badge> 
+          </span> <Badge color="primary"> </Badge>
           <h4 className="d-none d-sm-block">
-          is a computer vision + analytics platform bringing intelligence to dental x-ray diagnosis
+          is a computer vision + analytics platform bringing intelligence to dental diagnosis
           </h4>
         </div>
       </Container>
