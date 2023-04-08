@@ -22,16 +22,26 @@ def predict_image_file():
     try:
         if request.method == 'POST':
             # in model.py
-            img = preprocess_img(request.files['file'].stream)
-            pred = predict_result(img) # in model.py
-            response = jsonify({'data': pred})
+            # img = preprocess_img(request.files['photo'].stream)
+            # pred = predict_result(img) # in model.py
+            pred = 1
+            confidence = 0.895
+            response = jsonify({'prediction': pred},
+                               {'confidence score':confidence})
+            
+
             response.headers.add('Access-Control-Allow-Origin', '*')
-            # return response
-            return render_template("result.html", predictions=str(pred))
+            return response
+            # return render_template("result.html")
+
+            # return render_template("result.html", predictions=str(pred))
+            # response = "CAT"
+            # return {"message": response}
+            # return render_template("result.html", predictions=str(pred))
 
     except:
         error = "File cannot be processed."
-        response = jsonify({'some': 'data'})
+        response = jsonify({'message': 'error on processing'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         return response
 
