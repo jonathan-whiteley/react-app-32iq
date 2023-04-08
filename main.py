@@ -4,10 +4,15 @@ from PIL import Image
 from ludwig.api import LudwigModel
 from torchvision import transforms
 from flask import Flask, request, send_from_directory, jsonify
+from util import download_ludwig_model
+
 
 tensor_converter = transforms.ToTensor()
 app = Flask(__name__, static_folder='public')
 CORS(app)
+
+download_ludwig_model()
+ludwig_model = LudwigModel.load("./ludwig_model")
 
 
 # # Home route
@@ -24,13 +29,11 @@ def serve(path):
 def detect_abnormality():
     try:
         if request.method == 'POST':
-            model = LudwigModel.load("./../ludwig_model")
-
             image = Image.open(request.files['image'].stream)
             img_tensor = tensor_converter(image)
 
             model_input = {'radiographs_image_link': [img_tensor]}
-            preds = model.predict(model_input)
+            preds = ludwig_model.predict(model_input)
 
             abnormality = bool(preds[0]["label_predictions"][0])
             confidence = float(preds[0]["label_probability"][0])
@@ -40,9 +43,10 @@ def detect_abnormality():
 
             return response
     except Exception as e:
-        error = "File cannot be processed."
-        response = jsonify({'some': 'data'})
+        print("Error detecting abnormality: ", e)
+        response = jsonify({"abnormality": False, "confidence": 0.0})
         response.headers.add('Access-Control-Allow-Origin', '*')
+
         return response
 
 
