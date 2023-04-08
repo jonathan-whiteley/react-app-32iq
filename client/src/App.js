@@ -15,8 +15,8 @@ import Home from "./pages/Home";
 
 import { init, AuthType } from "@thoughtspot/visual-embed-sdk";
 import { BrowserRouter, Route, Routes, Switch, Redirect } from "react-router-dom";
-import Search from "./components/search";
-import Liveboard from "./components/liveboard";
+import Search from "./components/Search";
+import Liveboard from "./components/Liveboard";
 import {UppyComponent} from "./components/uppy";
 
 // import {UppyComponent} from "./components/uppy";

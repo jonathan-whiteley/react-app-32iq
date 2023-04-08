@@ -31,10 +31,17 @@ code {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 4rem;
 }
 
 a.header-button {
-    padding: 0 3rem;
+    margin: 0 3rem;
 }
 
+.ui.button.header-button {
+    padding: 0.75rem 1rem;
+    color: #e4d7ee;
+    background: #3f3c44;
+    font-weight: bold;
+    border: solid 1px #080808;
+    border-radius: 0.5rem;
+}

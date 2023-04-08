@@ -1,8 +1,9 @@
 import React from "react";
+import {Button} from "semantic-ui-react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Search from "./components/search";
-import Liveboard from "./components/liveboard";
+import Search from "./components/Search";
+import Liveboard from "./components/Liveboard";
 import {Menu} from "semantic-ui-react";
 
 
@@ -40,7 +41,11 @@ function getMenu(activeItem: string) {
                         name="analyze-image"
                         active={activeItem === "analyze-image"}
                     >
-                        Analyze Image
+                        <Button
+                            className="header-button"
+                        >
+                            Analyze Image
+                        </Button>
                     </Menu.Item>
                 </Link>
 
@@ -49,7 +54,11 @@ function getMenu(activeItem: string) {
                         name="patient-dashboard"
                         active={activeItem === "patient-dashboard"}
                     >
-                        Patient Dashboard
+                        <Button
+                            className="header-button"
+                        >
+                            Patient Dashboard
+                        </Button>
                     </Menu.Item>
                 </Link>
 
@@ -58,7 +67,11 @@ function getMenu(activeItem: string) {
                         name="patient-search"
                         active={activeItem === "patient-search"}
                     >
-                        Patient Dashboard
+                        <Button
+                            className="header-button"
+                        >
+                            Patient Search
+                        </Button>
                     </Menu.Item>
                 </Link>
             </div>
