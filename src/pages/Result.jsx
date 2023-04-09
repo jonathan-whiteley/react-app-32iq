@@ -78,7 +78,7 @@ export default function ResultsPage() {
                           <Row>
                             <Col md="4" xs="5">
                               <div className="icon-big text-center icon-warning">
-                                <i className="tim-icons icon-check-2 text-white" />
+                                {/* <i className="tim-icons icon-check-2 text-white" /> */}
                               </div>
                             </Col>
                             <Col md="8" xs="7">

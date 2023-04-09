@@ -34,6 +34,8 @@ export default function DataPage() {
         
         <div className="wrapper">
         <h1>this is the DATA page</h1>
+        <h1>Process</h1>
+        <h1>Dataset</h1>
           <div className="main">
           </div>
       </div>

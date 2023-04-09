@@ -62,11 +62,11 @@ export default function Index() {
                 <Row className="row-grid justify-content-center">
                   <Col lg="3">
                   <div className="info">
-                      <div className="icon icon-success">
+                      <div className="icon icon-primary">
                         <i className="tim-icons icon-sound-wave" />
                       </div>
                       <h4 className="info-title">Deep Learning + Analytics</h4>
-                      <hr className="line-success" />
+                      <hr className="line-primary" />
                       <p>
                         A single platform for detecting potential abnormalities and taking action on those insights
                       </p>
@@ -87,11 +87,11 @@ export default function Index() {
                   </Col>
                   <Col lg="3">
                     <div className="info">
-                      <div className="icon icon-warning">
+                      <div className="icon icon-primary">
                         <i className="tim-icons icon-single-02" />
                       </div>
                       <h4 className="info-title">User Experience</h4>
-                      <hr className="line-warning" />
+                      <hr className="line-primary" />
                       <p>
                       Created in partnership with subject matter experts to deliver 
                       an intuitive front-end application

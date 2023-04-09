@@ -34,6 +34,10 @@ export default function AboutPage() {
         
         <div className="wrapper">
         <h1>this is the ABOUT page</h1>
+        <h1>Project Motivation</h1>
+        <h1>Our Team</h1>
+        <h1>Acknowledgments</h1>
+
           <div className="main">
           </div>
       </div>

@@ -121,17 +121,15 @@ export default function IndexNavbar() {
             </Row>
           </div>
           <Nav navbar>
-            <NavItem>
+            {/* <NavItem>
               <NavLink 
               to="/" 
               tag={Link}>
               Home
               </NavLink>
-            </NavItem>
+            </NavItem> */}
             <NavItem>
               <NavLink
-                // href="#pablo"
-                // onClick={(e) => e.preventDefault()}
                 to="/about-page"
                 tag={Link} >
                 About
@@ -139,8 +137,6 @@ export default function IndexNavbar() {
            </NavItem>
            <NavItem>
               <NavLink
-                // href="#pablo"
-                // onClick={(e) => e.preventDefault()}
                 to="/data-page"
                 tag={Link} >
                 Data
