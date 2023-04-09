@@ -35,6 +35,7 @@ export class UppyComponent extends React.Component {
         const formData = new FormData();
           formData.append('file', file);
           console.log(file);
+          document.location.href = "/results-page"
       
           fetch('http://127.0.0.1:5000/prediction', {
             method: 'POST',
