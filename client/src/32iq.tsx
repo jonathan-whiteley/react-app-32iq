@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Search from "./components/Search";
 import Liveboard from "./components/Liveboard";
 import {Menu} from "semantic-ui-react";
+import AnalyzeImage from "./components/AnalyzeImage";
 
 
 function displayGrid(menuComponent: JSX.Element, applicationComponent: JSX.Element) {
@@ -30,7 +31,7 @@ function getMenu(activeItem: string) {
                         name="home"
                         active={activeItem === "home"}
                     >
-                        <h1 className="title">32iQ• Panoramic X-Ray Assistant</h1>
+                        <h1 className="title">32iQ • Panoramic X-Ray Assistant</h1>
                     </Menu.Item>
                 </Link>
             </div>
@@ -97,7 +98,7 @@ const Application32IQ = () => {
                 <Route path="/analyze-image" children={() =>
                     displayGrid(
                         getMenu("analyze-image"),
-                        <Search />,
+                        <AnalyzeImage />,
                     )} />
                 <Route path="/patient-search" children={() =>
                     displayGrid(

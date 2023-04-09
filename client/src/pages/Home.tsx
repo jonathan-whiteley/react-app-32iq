@@ -1,15 +1,6 @@
-import React from 'react';
-import PageHeader from "../components/HomePageHeader.js";
+import React from 'react';
+import PageHeader from "../components/HomePageHeader";
 import Footer from "../components/Footer.js";
-
-
-// function Home() {
-//     return (
-//         <h1>this is the homepage</h1>
-//     );
-// }
-
-// export default Home;
 
 export default function Index() {
     React.useEffect(() => {

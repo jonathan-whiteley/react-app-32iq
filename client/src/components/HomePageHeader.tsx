@@ -20,7 +20,7 @@ import React from "react";
 // reactstrap components
 import { Container } from "reactstrap";
 
-export default function PageHeader() {
+function PageHeader() {
   return (
     <div className="page-header header-filter">
       <div className="squares square1" />
@@ -41,3 +41,5 @@ export default function PageHeader() {
     </div>
   );
 }
+
+export default PageHeader;

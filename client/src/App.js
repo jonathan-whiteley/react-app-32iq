@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 
 import Application32IQ from "./32iq";
-// import "./index.css";
 import "./assets/css/nucleo-icons.css";
 import "./assets/scss/blk-design-system-react.scss";
 import "./assets/demo/demo.css";
+import 'semantic-ui-css/semantic.min.css'
 import IndexNavbar from "./components/IndexNavbar.js";
 import Footer from "./components/Footer.js";
 
@@ -14,7 +13,6 @@ import Home from "./pages/Home";
 
 
 import { init, AuthType } from "@thoughtspot/visual-embed-sdk";
-import { BrowserRouter, Route, Routes, Switch, Redirect } from "react-router-dom";
 import Search from "./components/Search";
 import Liveboard from "./components/Liveboard";
 import {UppyComponent} from "./components/uppy";
