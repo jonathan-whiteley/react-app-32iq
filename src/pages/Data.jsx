@@ -20,12 +20,12 @@ import Footer from "../components/Footer.js";
 
 // export default Result;
 
-export default function AboutPage() {
+export default function DataPage() {
   React.useEffect(() => {
-    document.body.classList.toggle("about-page");
+    document.body.classList.toggle("data-page");
     // Specify how to clean up after this effect:
     return function cleanup() {
-      document.body.classList.toggle("about-page");
+      document.body.classList.toggle("data-page");
     };
   }, []);
   return (
@@ -33,7 +33,7 @@ export default function AboutPage() {
         {/* <IndexNavbar /> */}
         
         <div className="wrapper">
-        <h1>this is the ABOUT page</h1>
+        <h1>this is the DATA page</h1>
           <div className="main">
           </div>
       </div>

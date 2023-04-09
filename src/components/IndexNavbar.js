@@ -121,11 +121,32 @@ export default function IndexNavbar() {
             </Row>
           </div>
           <Nav navbar>
-          <NavItem>
-              <UppyComponent>
-                {/* <i className="tim-icons icon-cloud-upload-94" /> Download */}
-              </UppyComponent>
+            <NavItem>
+              <NavLink 
+              to="/" 
+              tag={Link}>
+              Home
+              </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                // href="#pablo"
+                // onClick={(e) => e.preventDefault()}
+                to="/about-page"
+                tag={Link} >
+                About
+              </NavLink>
+           </NavItem>
+           <NavItem>
+              <NavLink
+                // href="#pablo"
+                // onClick={(e) => e.preventDefault()}
+                to="/data-page"
+                tag={Link} >
+                Data
+              </NavLink>
+           </NavItem>
+           
             <UncontrolledDropdown nav>
               <DropdownToggle
                 caret
@@ -136,7 +157,7 @@ export default function IndexNavbar() {
                 onClick={(e) => e.preventDefault()}
               >
                 <i className="fa fa-cogs d-lg-none d-xl-none" />
-                My Patients
+                Demo
               </DropdownToggle>
               <DropdownMenu className="dropdown-with-icons">
                 <DropdownItem href="/liveboard">
@@ -144,26 +165,26 @@ export default function IndexNavbar() {
                   Dashboard
                 </DropdownItem>
                 <DropdownItem href="/search">
-                  <i className="tim-icons icon-bullet-list-67" />
+                  <i className="tim-icons icon-zoom-split" />
                   SearchiQ
                 </DropdownItem>
                 <DropdownItem tag={Link} to="/results-page">
-                  <i className="tim-icons icon-single-02" />
+                  <i className="tim-icons icon-chart-bar-32" />
                   Results
+                </DropdownItem>
+                <DropdownItem 
+                href="https://www.youtube.com/"
+                target="_blank">
+                  <i className="tim-icons icon-video-66" />
+                  Video Demo
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
-            {/* <NavItem>
-              <Button
-                className="nav-link d-none d-lg-block"
-                color="primary"
-                target="_blank"
-                href="/uppy"
-              >
-                <i className="tim-icons icon-cloud-download-93" /> Analyze Image
-              </Button>
-            </NavItem> */}
-
+            <NavItem>
+              <UppyComponent>
+                {/* <i className="tim-icons icon-cloud-upload-94" /> Download */}
+              </UppyComponent>
+            </NavItem>
           </Nav>
         </Collapse>
       </Container>

@@ -7,7 +7,9 @@ import Footer from "./components/Footer.js";
 
 import Home from "./pages/Home";
 import Result from "./pages/Result";
-import About from "./pages/About";
+import AboutPage from "./pages/About";
+import DataPage from "./pages/Data";
+
 
 
 
@@ -54,7 +56,9 @@ function App() {
         <Route path="/liveboard" element={<Liveboard />} />
         <Route path="/uppy" element={<UppyComponent />} />
         <Route path="/results-page" element={<Result />} />
-        <Route path="/about-page" element={<About />} />
+        <Route path="/about-page" element={<AboutPage />} />
+        <Route path="/data-page" element={<DataPage />} />
+
 
 
       </Routes>
