@@ -39,7 +39,8 @@ export default function PageHeader() {
           <span> <Badge color="primary"> </Badge> 
           </span> <Badge color="primary"> </Badge>
           <h4 className="d-none d-sm-block">
-          is a computer vision + analytics platform bringing intelligence to dental diagnosis
+          is a computer vision + analytics platform 
+          bringing intelligence to dental diagnosis. Click Analyze Image to begin.
           </h4>
         </div>
       </Container>

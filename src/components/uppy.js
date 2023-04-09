@@ -35,7 +35,6 @@ export class UppyComponent extends React.Component {
         const formData = new FormData();
           formData.append('file', file);
           console.log(file);
-          document.location.href = "/results-page"
       
           fetch('http://127.0.0.1:5000/prediction', {
             method: 'POST',
@@ -46,6 +45,8 @@ export class UppyComponent extends React.Component {
               console.log(data);
               // setPrediction(data);
             });
+          document.location.href = "/results-page"
+
         // const room_url = {{ url_for("room_detail", id=room.id)|tojson }}
 
       // });
