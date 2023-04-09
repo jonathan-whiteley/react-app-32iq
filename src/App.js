@@ -53,7 +53,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/liveboard" element={<Liveboard />} />
         <Route path="/uppy" element={<UppyComponent />} />
-        <Route path="/result" element={<Result />} />
+        <Route path="/results-page" element={<Result />} />
         <Route path="/about-page" element={<About />} />
 
 

@@ -147,10 +147,10 @@ export default function IndexNavbar() {
                   <i className="tim-icons icon-bullet-list-67" />
                   SearchiQ
                 </DropdownItem>
-                {/* <DropdownItem tag={Link} to="/profile-page">
+                <DropdownItem tag={Link} to="/results-page">
                   <i className="tim-icons icon-single-02" />
-                  About
-                </DropdownItem> */}
+                  Results
+                </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
             {/* <NavItem>
