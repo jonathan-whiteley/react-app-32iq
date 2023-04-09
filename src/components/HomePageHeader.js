@@ -38,10 +38,12 @@ export default function PageHeader() {
           <Badge color="primary"> </Badge> 
           <span> <Badge color="primary"> </Badge> 
           </span> <Badge color="primary"> </Badge>
-          <h4 className="d-none d-sm-block">
-          is a computer vision + analytics platform 
-          bringing intelligence to dental diagnosis. Click Analyze Image to begin.
-          </h4>
+          <h2 className="d-none d-md-block">
+          <small>is a computer vision + analytics platform 
+          bringing intelligence to dental diagnosis. 
+          Click <b>Analyze Image </b> to begin.
+          </small>
+          </h2>
         </div>
       </Container>
     </div>
