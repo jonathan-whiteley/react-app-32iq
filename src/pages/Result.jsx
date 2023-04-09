@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import PageHeader from "../components/HomePageHeader.js";
 import Footer from "../components/Footer.js";
 
@@ -11,6 +12,7 @@ import {
   CardTitle,
   ListGroupItem,
   ListGroup,
+  NavLink,
   Container,
   Row,
   Col
@@ -108,13 +110,26 @@ export default function ResultsPage() {
                     </p>
                     <br />
 
-                    <a
+                    <a 
                       className="font-weight-bold text-info mt-5"
                       href="#pablo"
                       onClick={(e) => e.preventDefault()}
+                      to="/liveboard" 
                     >
-                      Save Result {" "}
-                      <i className="tim-icons icon-minimal-right text-info" />
+                    <Button 
+                    className="btn-simple btn-round"
+                    // type="button"
+                    color="primary" 
+                    to="/liveboard" 
+                    tag={Link}>
+                    <i className="tim-icons icon-minimal-right" /> 
+                    Save Result                    
+                    </Button>
+                    {/* <NavLink to="/liveboard" tag={Link}>
+                    Save Result {" "}
+                    </NavLink> */}
+                      {/* Save Result {" "}
+                      <i className="tim-icons icon-minimal-right text-info" /> */}
                     </a>
                   </div>
                 </Col>
