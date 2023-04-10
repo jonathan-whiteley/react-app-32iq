@@ -40,6 +40,7 @@ export default function Index() {
           <PageHeader />
           <div className="main">
           <section className="section section-lg">
+            
           {/* <img
             alt="..."
             className="path"

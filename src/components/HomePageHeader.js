@@ -16,11 +16,16 @@
 
 */
 import React from "react";
+import logo from '../assets/img/tooth_logo.png';
 
 
 
 // reactstrap components
-import { Badge, Container } from "reactstrap";
+import { Badge, 
+        Container,   
+        Row,
+        Col 
+    } from "reactstrap";
 
 export default function PageHeader() {
   return (
@@ -33,11 +38,25 @@ export default function PageHeader() {
       <div className="squares square6" />
       <div className="squares square7" />
       <Container>
+      
         <div className="content-center brand">
-          <h1 className="h1-seo">32iQ</h1>
-          <Badge color="primary"> </Badge> 
+        {/* <Row className="modal-header"> */}
+        
+          <h1 className="h1-seo">
+            32iQ 
+            {/* &nbsp;
+            &nbsp; */}
+          {/* <span> • </span> */}
+          </h1>
+        
+        <img className="img" src={logo} alt="32iq logo"/>
+        <br/>
+    {/* </Row> */}
+
+          {/* <Badge color="primary"> </Badge> 
           <span> <Badge color="primary"> </Badge> 
-          </span> <Badge color="primary"> </Badge>
+          </span> <Badge color="primary"> </Badge> */}
+          <br/>
           <h2 className="d-none d-md-block">
           <small>is a computer vision + analytics platform 
           bringing intelligence to dental diagnosis. 

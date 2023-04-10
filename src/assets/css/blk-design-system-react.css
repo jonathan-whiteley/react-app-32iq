@@ -6256,6 +6256,8 @@ a.close.disabled {
   opacity: 0.16;
 }
 
+
+
 .modal-header {
   display: flex;
   align-items: flex-start;
@@ -24118,6 +24120,19 @@ td.rdtYear:hover {
 }
 .blockquote.blockquote-info small {
   color: #1d8cf8;
+}
+
+.parent123 {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child123 {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
 }
 
 /*# sourceMappingURL=blk-design-system-react.css.map */
