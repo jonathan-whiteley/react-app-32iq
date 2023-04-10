@@ -3,6 +3,7 @@ import "./assets/css/nucleo-icons.css";
 import "./assets/scss/blk-design-system-react.scss";
 import "./assets/demo/demo.css";
 import IndexNavbar from "./components/Navbars/IndexNavbar.js";
+import './App.css'
 
 
 import { init, AuthType } from "@thoughtspot/visual-embed-sdk";
@@ -10,6 +11,7 @@ import { BrowserRouter, Route, Routes, Switch, Redirect } from "react-router-dom
 import BurgerMenu from "./components/burger/burgermenu";
 import Search from "./components/search";
 import Liveboard from "./components/liveboard";
+import About from './components/profile-page';
 import {UppyComponent} from "./components/uppy";
 
 // import {UppyComponent} from "./components/uppy";
@@ -47,6 +49,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/liveboard" element={<Liveboard />} />
         <Route path="/uppy" element={<UppyComponent />} />
+        <Route path="/profile-page" element={<About />} />
       </Routes>
     </div>
     </>
