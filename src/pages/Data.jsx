@@ -4,6 +4,7 @@ import Footer from "../components/Footer.js";
 import table from '../assets/img/table.png';
 import compute from '../assets/img/compute.png';
 import modeling1 from '../assets/img/modeling1.png';
+import modeling3 from '../assets/img/modeling3.png';
 
 
 
@@ -56,6 +57,11 @@ const carouselItems = [
     altText: "Slide 2",
     caption: "Panoramic radiograph labeled"
   },
+  {
+    src: require("../assets/img/labels.png"),
+    altText: "Slide 2",
+    caption: "Five categories of abnormality"
+  },
 ];
 
 let ps = null;
@@ -106,9 +112,18 @@ export default function DataPage() {
               <Col md="5">
                 <h1 className="profile-title text-left">Dataset</h1>
                 {/* <h5 className="text-on-back">02</h5> */}
-                <h3 className="profile-description text-left">
-                  Here is where we describe the datset, with links to original paper
-                </h3>
+                <h4 className="profile-description text-left">
+                
+                <li>1000 de-identified panoramic radiographs in .jpg format</li>
+                <li>Randomly selected from the patient database at the 
+                Tufts University School of Dental Medicine</li>
+                <li>Captured by OP100 Orthopantomograph( Kavo Kerr) and 
+                  Plammeca Promax 2D (Henry Schein) radiographic units </li>
+                <li>Annotated by both an Expert + Student across 
+                  five main classes of abnormality</li>
+
+                 
+                </h4>
                 <div className="btn-wrapper pt-3">
                 
                   <Button
@@ -132,15 +147,14 @@ export default function DataPage() {
                 <h1 className="profile-title text-left">Modeling Process</h1>
                 {/* <h5 className="text-on-back">01</h5> */}
                 <h4 className="profile-description">
-                Here is where we describe the modeling process & approach
+                We used the Expert labels as our ground truth. 
+                Initial modeling results showed the model was not learning and naively predicting each image as "none" given this was the majority class. 
+                This led us to uncover issues with how the image files were being resized when read in from cloud object storage. 
                 <br/>        <br/>
-
-
-                <b>Data cleaning:</b> Removed noisy images from original dataset 
+                Major changes to the original dataset included:
                 <br/>        <br/>
-
-
-                <b>Data Augmentation:</b> Increased dataset by 5x
+                <li> <b>Data cleaning and balancing:</b> Removed noisy images from original dataset </li>
+                <li><b>Data augmentation:</b> Increased dataset by 5x with flips and minimal rotations 10 degrees or less  </li>
                 <br/>        <br/>
 
                 </h4>
@@ -148,14 +162,16 @@ export default function DataPage() {
 
               </Col>
             </Row>
-            <h2>Training Data Structure</h2>
-            <img className="img" src={table} alt="data table"/>
+            {/* <h2>Training Data Structure</h2>
+            <img className="img" src={table} alt="data table"/> */}
             <br/>        <br/>
             <h2> Compute Resources</h2>
             <img className="img" src={compute} alt="compute table"/>
             <br/>        <br/>
-            <h2> Modeling</h2>
-            <img className="img" src={modeling1} alt="compute table"/>
+            <h2> Model Structure + HyperParameters</h2>
+            <img className="img" src={modeling1} alt="model"/>
+            <br/>        <br/>
+            <img className="img" src={modeling3} alt="model parameters"/>
             <br/>        <br/>
             
           </Container>
