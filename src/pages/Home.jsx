@@ -63,7 +63,7 @@ export default function Index() {
                   <Col lg="3">
                   <div className="info">
                       <div className="icon icon-primary">
-                        <i className="tim-icons icon-sound-wave" />
+                        <i className="tim-icons icon-cloud-upload-94" />
                       </div>
                       <h4 className="info-title">Deep Learning + Analytics</h4>
                       <hr className="line-primary" />
