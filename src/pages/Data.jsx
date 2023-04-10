@@ -1,6 +1,11 @@
 import React from 'react';
 import PageHeader from "../components/HomePageHeader.js";
 import Footer from "../components/Footer.js";
+import table from '../assets/img/table.png';
+import compute from '../assets/img/compute.png';
+import modeling1 from '../assets/img/modeling1.png';
+
+
 
 import {
   Button,
@@ -26,21 +31,31 @@ import {
 } from "reactstrap";
 
 const carouselItems = [
+  // {
+  //   src: require("../assets/img/tufts_folders.png"),
+  //   altText: "Slide 1",
+  //   caption: "Folder structure of the multi-modal Tufts dental database"
+  // },
   {
-    src: require("../assets/img/chester-wade.jpg"),
-    altText: "Slide 1",
-    caption: "Big City Life, United States"
-  },
-  {
-    src: require("../assets/img/mark-finn.jpg"),
-    altText: "Slide 2",
-    caption: "Somewhere Beyond, United States"
-  },
-  {
-    src: require("../assets/img/james.jpg"),
+    src: require("../assets/img/tufts1.png"),
     altText: "Slide 3",
-    caption: "Stocks, United States"
-  }
+    caption: "Panoramic radiograph"
+  },
+  {
+    src: require("../assets/img/tufts2.png"),
+    altText: "Slide 3",
+    caption: "Teeth mask overlaid on the panoramic radiograph"
+  },
+  {
+    src: require("../assets/img/tufts6.png"),
+    altText: "Slide 3",
+    caption: "Maxillomandibular region of interest"
+  },
+  {
+    src: require("../assets/img/tufts_images2.gif"),
+    altText: "Slide 2",
+    caption: "Panoramic radiograph labeled"
+  },
 ];
 
 let ps = null;
@@ -77,24 +92,10 @@ export default function DataPage() {
         <br></br><br></br>
         <br></br><br></br>
         <div className="wrapper">
-        <div className="page-header">
-
-        <Container className="align-items-center">
-            <Row>
-              <Col lg="6" md="6">
-                <h1 className="profile-title text-left">Process</h1>
-                <h5 className="text-on-back">01</h5>
-                <p className="profile-description">
-                Here is where we describe the modeling process & approach, with links to original paper
-
-                </p>
-              </Col>
-            </Row>
-          </Container>
-          </div>
+        {/* <div className="page-header"> */}
 
 {/* Dataset */}
-          <div className="section">
+<div className="section">
           <Container>
             <Row className="justify-content-between">
               <Col md="6">
@@ -104,10 +105,10 @@ export default function DataPage() {
               </Col>
               <Col md="5">
                 <h1 className="profile-title text-left">Dataset</h1>
-                <h5 className="text-on-back">02</h5>
-                <p className="profile-description text-left">
+                {/* <h5 className="text-on-back">02</h5> */}
+                <h3 className="profile-description text-left">
                   Here is where we describe the datset, with links to original paper
-                </p>
+                </h3>
                 <div className="btn-wrapper pt-3">
                   <Button
                     className="btn-simple"
@@ -122,7 +123,44 @@ export default function DataPage() {
             </Row>
           </Container>
         </div>
-      </div>
+
+        <Container className="align-items-center">
+            <Row>
+              <Col lg="6" md="6">
+                <h1 className="profile-title text-left">Modeling Process</h1>
+                {/* <h5 className="text-on-back">01</h5> */}
+                <h4 className="profile-description">
+                Here is where we describe the modeling process & approach
+                <br/>        <br/>
+
+
+                <b>Data cleaning:</b> Removed noisy images from original dataset 
+                <br/>        <br/>
+
+
+                <b>Data Augmentation:</b> Increased dataset by 5x
+                <br/>        <br/>
+
+                </h4>
+
+
+              </Col>
+            </Row>
+            <h2>Training Data Structure</h2>
+            <img className="img" src={table} alt="data table"/>
+            <br/>        <br/>
+            <h2> Compute Resources</h2>
+            <img className="img" src={compute} alt="compute table"/>
+            <br/>        <br/>
+            <h2> Modeling</h2>
+            <img className="img" src={modeling1} alt="compute table"/>
+            <br/>        <br/>
+            
+          </Container>
+          
+          </div>
+
+      {/* </div> */}
     </>
   );
 }
