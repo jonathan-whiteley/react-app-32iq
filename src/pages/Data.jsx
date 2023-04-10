@@ -110,13 +110,15 @@ export default function DataPage() {
                   Here is where we describe the datset, with links to original paper
                 </h3>
                 <div className="btn-wrapper pt-3">
+                
                   <Button
                     className="btn-simple"
+                    // className="nav-link d-none d-lg-block"
                     color="primary"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
+                    target="_blank"
+                    href="https://ieeexplore.ieee.org/document/9557804"
                   >
-                    <i className="tim-icons icon-book-bookmark" /> Bookmark
+                    <i className="tim-icons icon-book-bookmark" /> Tufts Dental Database
                   </Button>
                 </div>
               </Col>

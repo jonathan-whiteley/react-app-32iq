@@ -40,7 +40,7 @@ export default function PageHeader() {
       <Container>
       
         <div className="content-center brand">
-        {/* <Row className="modal-header"> */}
+        <Row className="modal-header-custom">
         
           <h1 className="h1-seo">
             32iQ 
@@ -51,14 +51,14 @@ export default function PageHeader() {
         
         <img className="img" src={logo} alt="32iq logo"/>
         <br/>
-    {/* </Row> */}
+    </Row>
 
           {/* <Badge color="primary"> </Badge> 
           <span> <Badge color="primary"> </Badge> 
           </span> <Badge color="primary"> </Badge> */}
           <br/>
           <h2 className="d-none d-md-block">
-          <small>is a computer vision + analytics platform 
+          <small> a computer vision + analytics platform 
           bringing intelligence to dental diagnosis. 
           Click <b>Analyze Image </b> to begin.
           </small>
