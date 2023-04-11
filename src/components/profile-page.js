@@ -1,8 +1,11 @@
 import React from "react";
+import Alexa from './images/Alexa.jpg';
+import Connor from './images/Connor.jpg';
+import Jonathan from './images/Jonathan.jpg';
+import Max from './images/Max.jpg';
 
 function About() {
-  let message = `32iQ, a computer-vision-powered diagnostic aid for panoramic x-ray images,
-  is brought to you by a dedicated team of Berkeley data scientists.`;
+  let message = `32iQ is a computer-vision-powered diagnostic aid for panoramic x-ray images brought to you by a dedicated team of Berkeley data scientists.`;
   return (
     <section class="section-white">
 
@@ -22,7 +25,7 @@ function About() {
 
                 <div class="team-item">
                 
-                    <img src="https://demo.epic-webdesign.com/tf-pacifico/v1/images/team1a.jpg" class="team-img" alt="pic" />                   
+                    <img src={Alexa} class="team-img" alt="pic" />                   
                     <h3>ALEXA COUGHLIN</h3>            
                     <div class="team-info"><p>Product Manager</p></div>
                     <div class="bio"><p>Short bio.</p></div>
@@ -34,7 +37,7 @@ function About() {
 
                 <div class="team-item">
                 
-                    <img src="https://demo.epic-webdesign.com/tf-pacifico/v1/images/team2a.jpg" class="team-img" alt="pic" />
+                    <img src={Connor} class="team-img" alt="pic" />
                    
                     <h3>CONNOR McCORMICK</h3>
                     
@@ -49,7 +52,7 @@ function About() {
 
                 <div class="team-item">
                 
-                    <img src="/images/Jonathan.jpg" class="team-img" alt="pic" />
+                    <img src={Jonathan} class="team-img" alt="pic" />
                    
                     <h3>JOHNATHAN WHITELEY</h3>
                     
@@ -64,7 +67,7 @@ function About() {
 
                 <div class="team-item">
                 
-                    <img src="https://demo.epic-webdesign.com/tf-pacifico/v1/images/team3a.jpg" class="team-img" alt="pic" />
+                    <img src={Max} class="team-img" alt="pic" />
                    
                     <h3>MAX HOFF</h3>
                     
