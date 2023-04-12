@@ -35,7 +35,7 @@ export default function Footer() {
       <Container>
         <Row>
           <Col md="3">
-            <h1 className="title">32iQ•</h1>
+            <h1 className="title">32iQ •</h1>
           </Col>
           <Col md="3">
             <Nav>
@@ -54,31 +54,37 @@ export default function Footer() {
           <Col md="3">
             <Nav>
               <NavItem>
-                <NavLink href="link">
+                <NavLink 
+                href="mailto:32iq.data@gmail.com"
+                target="_blank"
+                >
                   Contact Us
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="link">
-                  About Us
+                <NavLink                 
+                href="https://github.com/jonathan-whiteley/react-app-32iq"
+                target="_blank"
+                >
+                  Github
                 </NavLink>
               </NavItem>
             </Nav>
           </Col>
-          <Col md="3">
+          {/* <Col md="3">
             <h3 className="title">Contact us:</h3>
             <div className="btn-wrapper profile">
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
                 color="default"
-                href="https://twitter.com/creativetim"
+                href="mailto:32iq.data@gmail.com"
                 id="tooltip622135962"
                 target="_blank"
               >
-                <i className="fab fa-twitter" />
+                <i className="tim-icons icon-email-85r" />
               </Button>
               <UncontrolledTooltip delay={0} target="tooltip622135962">
-                Follow us
+                Email us!
               </UncontrolledTooltip>
               <Button
                 className="btn-icon btn-neutral btn-round btn-simple"
@@ -105,7 +111,7 @@ export default function Footer() {
                 Follow us
               </UncontrolledTooltip>
             </div>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </footer>

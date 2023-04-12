@@ -31,21 +31,21 @@ export class UppyComponent extends React.Component {
         // endpoint: 'http://localhost:3001/image',
         fieldName: 'photo',
         formData: true, })
-      .on('upload-success', (file, response) => {
-        const formData = new FormData();
-          formData.append('file', file);
-          console.log(file);
+      // .on('upload-success', (file, response) => {
+      //   const formData = new FormData();
+      //     formData.append('file', file);
+      //     console.log(file);
       
-          fetch('http://127.0.0.1:5000/prediction', {
-            method: 'POST',
-            body: formData
-          })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data);
-              // setPrediction(data);
-            });
-          document.location.href = "/results-page"
+      //     fetch('http://127.0.0.1:5000/prediction', {
+      //       method: 'POST',
+      //       body: formData
+      //     })
+      //       .then(res => res.json())
+      //       .then(data => {
+      //         console.log(data);
+      //         // setPrediction(data);
+      //       });
+          // document.location.href = "/results-page"
 
         // const room_url = {{ url_for("room_detail", id=room.id)|tojson }}
 
@@ -57,7 +57,7 @@ export class UppyComponent extends React.Component {
       //   img.alt = file.id;
       //   img.src = response.uploadURL;
       //   document.body.appendChild(img);
-});
+// });
       // .on('upload-success', (result) => {
       //     console.log('Upload result:', result)
       //   })

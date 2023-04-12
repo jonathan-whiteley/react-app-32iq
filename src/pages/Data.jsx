@@ -149,11 +149,12 @@ export default function DataPage() {
                 <h4 className="profile-description">
                 We used the Expert labels as our ground truth. 
                 Initial modeling results showed the model was not learning and naively predicting each image as "none" given this was the majority class. 
-                This led us to uncover issues with how the image files were being resized when read in from cloud object storage. 
+                This led us to uncover issues with how the image files were being resized when read in from cloud object storage. No variations existed with respect to size, quality, but there differences in the level of zoom on the teeth. These challenges were overcome in the preprocessing step. 
+                However 
                 <br/>        <br/>
                 Major changes to the original dataset included:
                 <br/>        <br/>
-                <li> <b>Data cleaning and balancing:</b> Removed noisy images from original dataset </li>
+                <li> <b>Data cleaning and balancing:</b> We removed noisy images from original dataset as variations in contrast, samples with no teeth or large numbers of implants were making it difficult for our model to learn the relevant features</li>
                 <li><b>Data augmentation:</b> Increased dataset by 5x with flips and minimal rotations 10 degrees or less  </li>
                 <br/>        <br/>
 
@@ -175,8 +176,10 @@ export default function DataPage() {
             <br/>        <br/>
             
           </Container>
-          
+          <Footer />
+
           </div>
+          
 
       {/* </div> */}
     </>

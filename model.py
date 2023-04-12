@@ -1,3 +1,4 @@
+# from keras.models import load_model
 from keras.utils import img_to_array
 import numpy as np
 from PIL import Image
@@ -18,6 +19,7 @@ def preprocess_img(img_path):
 # Predicting function
 def predict_result(predict):
     # pred = model.predict(predict)
-    pred = len(predict)
+    # pred = len(predict)
     # pred = [1,0]
+    pred = len(predict) + 33
     return pred

@@ -158,7 +158,7 @@ export default function IndexNavbar() {
               <DropdownMenu className="dropdown-with-icons">
                 <DropdownItem href="/liveboard">
                 <i className="tim-icons icon-image-02" />
-                  Dashboard
+                  PatientiQ
                 </DropdownItem>
                 <DropdownItem href="/search">
                   <i className="tim-icons icon-zoom-split" />

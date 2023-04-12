@@ -39,7 +39,7 @@ export default function Index() {
         <div className="wrapper">
           <PageHeader />
           <div className="main">
-          <section className="section section-lg">
+          {/* <section className="section"> */}
             
           {/* <img
             alt="..."
@@ -97,14 +97,16 @@ export default function Index() {
                       Created in partnership with subject matter experts to deliver 
                       an intuitive front-end application
                       </p>
+                      
                     </div>
                   </Col>
                 </Row>
               </Col>
             </Row>
           </Container>
-        </section>
+        {/* </section> */}
           </div>
+          <br/><br/><br/><br/>
         <Footer />
       </div>
     </>

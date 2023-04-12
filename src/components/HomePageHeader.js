@@ -44,8 +44,7 @@ export default function PageHeader() {
         
           <h1 className="h1-seo">
             32iQ 
-            {/* &nbsp;
-            &nbsp; */}
+            {/* &nbsp; • */}
           {/* <span> • </span> */}
           </h1>
         
@@ -59,8 +58,11 @@ export default function PageHeader() {
           <br/>
           <h2 className="d-none d-md-block">
           <small> a computer vision + analytics platform 
-          bringing intelligence to dental diagnosis. 
-          Click <b>Analyze Image </b> to begin.
+          bringing intelligence to dental diagnosis 
+          <br></br>
+          <br></br>
+
+          Click <b>Analyze Image </b> to begin
           </small>
           </h2>
         </div>

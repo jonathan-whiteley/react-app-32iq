@@ -100,12 +100,12 @@ export default function ResultsPage() {
                       Prediction Results
                     </h1>
                     <p>
-                      Prediction: a binary classification on whether or not the image uploaded contains a dental abnormality 
+                      <b>Prediction:</b> a binary classification on whether or not the image uploaded contains a dental abnormality 
                       (Flagged or Normal)
                     </p>
                     <br />
                     <p>
-                      Confidence Score: this measures the degree of confidence 32iQ has in the prediction. (0 to 1 with 
+                    <b>Confidence Score:</b> this measures the degree of confidence 32iQ has in the prediction. (0 to 1 with 
                       0 being not certain and 1 being most certain)
                     </p>
                     <br />
@@ -135,6 +135,7 @@ export default function ResultsPage() {
                 </Col>
               </Row>
             </Container>
+            
           </section>
 
         {/* <div className="wrapper">
