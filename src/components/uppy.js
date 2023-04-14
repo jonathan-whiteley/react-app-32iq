@@ -27,15 +27,19 @@ export class UppyComponent extends React.Component {
 
     this.uppy = new Uppy()
       .use(XHRUpload, { 
-        endpoint: 'http://127.0.0.1:5000/prediction',
+        endpoint: 'http://127.0.0.1:5000/detect_abnormality',
         // endpoint: 'http://localhost:3001/image',
         fieldName: 'photo',
-        formData: true, })
+        formData: true,
+      })
+        .on('upload-success', (file, response) => {
+            console.log(response);
+        })
       // .on('upload-success', (file, response) => {
       //   const formData = new FormData();
       //     formData.append('file', file);
       //     console.log(file);
-      
+      //
       //     fetch('http://127.0.0.1:5000/prediction', {
       //       method: 'POST',
       //       body: formData
