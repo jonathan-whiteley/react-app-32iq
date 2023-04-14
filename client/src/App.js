@@ -5,19 +5,7 @@ import "./assets/css/nucleo-icons.css";
 import "./assets/scss/blk-design-system-react.scss";
 import "./assets/demo/demo.css";
 import 'semantic-ui-css/semantic.min.css'
-import IndexNavbar from "./components/IndexNavbar.js";
-import Footer from "./components/Footer.js";
-
-import Home from "./pages/Home";
-
-
-
 import { init, AuthType } from "@thoughtspot/visual-embed-sdk";
-import Search from "./components/Search";
-import Liveboard from "./components/Liveboard";
-import {UppyComponent} from "./components/uppy";
-
-// import {UppyComponent} from "./components/uppy";
 
 init({
   thoughtSpotHost: "https://my3.thoughtspot.cloud/",
@@ -40,49 +28,9 @@ init({
 });
 
 function App() {
-  // return (
-  //   <div className="App">
-  //     <header>
-  //       <IndexNavbar />
-  //     </header>
-  //     <Switch>
-  //       {/* <Route path="/" element={<h1>Home</h1>} /> */}
-  //       <Route index element={<Home />} />
-  //       <Route path="/search" element={<Search />} />
-  //       <Route path="/liveboard" element={<Liveboard />} />
-  //       <Route path="/uppy" element={<UppyComponent />} />
-  //     </Switch>
-  //     {/* <footer>
-  //       <Footer />
-  //     </footer> */}
-  //   </div>
-  // );
     return (
           <Application32IQ />
     );
 }
 
 export default App;
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
