@@ -79,7 +79,7 @@ function AnalyzeImage() {
                         hidden
                         onChange={onFileChange}
                     />
-                    <Button className={"analysis-buttons"}>Analyze</Button>
+                    <Button className={"analysis-buttons"}><Icon name={"rss"}/> Analyze</Button>
                 </div>
             </Container>
             <Divider/>

@@ -53,14 +53,13 @@ body.index-page {
 }
 
 a.header-button {
-    margin: 0 3rem;
+    /*margin: 0 3rem;*/
 }
 
 .ui.button.header-button {
-    padding: 0.75rem 1rem;
-    color: #e4d7ee;
-    background: #3f3c44;
+    padding: 1.75rem 1rem;
+    color: white;
+    background: #e158d3;
     font-weight: bold;
     border: solid 1px #080808;
-    border-radius: 0.5rem;
 }
