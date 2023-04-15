@@ -1,9 +1,9 @@
 import React from "react";
 import {Button} from "semantic-ui-react";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Search from "./components/Search";
-import Liveboard from "./components/Liveboard";
+import Home from "./components/Home/Home";
+import Search from "./components/Integrations/Search";
+import Liveboard from "./components/Integrations/Liveboard";
 import {Menu} from "semantic-ui-react";
 import AnalyzeImage from "./components/AnalyzeImage/AnalyzeImage";
 import About from "./components/About/About";
