@@ -1,13 +1,18 @@
 import boto3
 import os
-
+import settings
 
 def download_ludwig_model():
     try:
         AWS_REGION = "us-west-1"
         S3_BUCKET_NAME = "210-capstone"
 
-        s3_resource = boto3.resource("s3", region_name=AWS_REGION)
+        session = boto3.Session(
+            aws_access_key_id=settings.AWS_SERVER_PUBLIC_KEY,
+            aws_secret_access_key=settings.AWS_SERVER_SECRET_KEY,
+        )
+
+        s3_resource = session.resource("s3", region_name=AWS_REGION)
 
         model_hyperparameters = s3_resource.Object(S3_BUCKET_NAME, 'models/ludwig_model/model_hyperparameters.json')
         model_weights = s3_resource.Object(S3_BUCKET_NAME, 'models/ludwig_model/model_weights')
