@@ -59,6 +59,7 @@ div.prediction-result {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 15rem;
     margin-left: 5rem;
     padding: 0.8rem 0.5rem 0.8rem 1.75rem;
     background: #3b4f82;
@@ -99,7 +100,8 @@ div.prediction-confidence {
     display: flex;
     flex-direction: row;
     border-radius: 0.25rem;
-    justify-content: space-between;
+    justify-content: flex-end;
+    width: 11rem;
     padding: 1.05rem 0.75rem 0.5rem 1.05rem;
     margin: 0 0 0 0.5rem;
     background: #23245c;

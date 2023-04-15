@@ -26,7 +26,7 @@ function AnalyzeImage() {
     const [file, setFile] = React.useState<File | null>(null);
     const [fileDataURL, setFileDataURL] = useState(null);
     const [prediction, setPrediction] = useState<string>();
-    const [confidence, setConfidence] = useState();
+    const [confidence, setConfidence] = useState<number>();
     const [isLoading, setIsLoading] = useState(false);
 
     const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,16 +55,17 @@ function AnalyzeImage() {
             formData
         ).then((response) => {
             console.log(response.data);
+            const {abnormality, conf} = response.data;
 
-            if (response.data.abnormality === 1) {
+            if (abnormality) {
                 setPrediction("Flagged");
-            }
-
-            if (response.data.abnormality === 0) {
+            } else {
                 setPrediction("Normal");
             }
 
-            setConfidence(response.data.confidence);
+            setConfidence(
+                conf.toPrecision(3) * 100
+            );
             setIsLoading(false);
         }).catch((error) => {
             console.log(error);
@@ -167,7 +168,7 @@ function AnalyzeImage() {
                                 <>
                                     {confidence ? <ConfidenceIcon confidence={confidence}/> : undefined}
                                     <div className={"confidence-label"}>
-                                        <Header as={"h3"} className={"prediction-label-header"}>{prediction ? String(confidence) : "--"}</Header>
+                                        <Header as={"h3"} className={"prediction-label-header"}>{confidence ? String(confidence) + "%" : "--"}</Header>
                                         <p className={"prediction-label-text"}>Confidence</p>
                                     </div>
                                 </>

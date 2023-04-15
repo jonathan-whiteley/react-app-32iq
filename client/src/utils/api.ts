@@ -22,7 +22,7 @@ export function getClientEndpoint() {
 }
 
 export const apiServer = axios.create({
-    withCredentials: true,
+    withCredentials: false,
     baseURL: getApiEndpoint()
 });
 
