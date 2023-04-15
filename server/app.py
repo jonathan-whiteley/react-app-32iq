@@ -1,5 +1,5 @@
 import os
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 from PIL import Image
 from ludwig.api import LudwigModel
 from torchvision import transforms
@@ -9,7 +9,7 @@ from util import download_ludwig_model
 
 tensor_converter = transforms.ToTensor()
 app = Flask(__name__, static_folder='public')
-CORS(app)
+CORS(app, support_credentials=True)
 
 download_ludwig_model()
 ludwig_model = LudwigModel.load("./ludwig_model")
@@ -26,6 +26,7 @@ def serve(path):
 
 
 @app.route('/detect_abnormality', methods=['POST'])
+@cross_origin(supports_credentials=True)
 def detect_abnormality():
     try:
         if request.method == 'POST':
@@ -39,13 +40,13 @@ def detect_abnormality():
             confidence = float(preds[0]["label_probability"][0])
 
             response = jsonify({"abnormality": abnormality, "confidence": confidence})
-            response.headers.add('Access-Control-Allow-Origin', '*')
+            response.headers.add('Access-Control-Allow-Origin', 'localhost:5000')
 
             return response
     except Exception as e:
         print("Error detecting abnormality: ", e)
         response = jsonify({"abnormality": False, "confidence": 0.0})
-        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Origin', 'localhost:5000')
 
         return response
 

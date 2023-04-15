@@ -141,36 +141,36 @@ function AnalyzeImage() {
                     <div className={"prediction-result"}>
                         {
                             isLoading ?
-                            <>
-                                {
-                                    prediction ?
-                                        prediction === "Flagged" ?
-                                            <Icon name={"warning circle"} size={"big"} color={"purple"}/>:
-                                            <Icon name={"check circle"} size={"big"} color={"green"}/>
-                                        :
-                                        undefined
-                                }
-                                <div className={"prediction-label"}>
-                                    <Header as={"h3"} className={"prediction-label-header"}>{prediction ? String(prediction) : "--"}</Header>
-                                    <p className={"prediction-label-text"}>Prediction</p>
-                                </div>
-                            </>
-                            :
-                            <Loader active inline={"centered"} size={"large"}/>
+                                <Loader active inline={"centered"} size={"medium"}/>
+                                :
+                                <>
+                                    {
+                                        prediction ?
+                                            prediction === "Flagged" ?
+                                                <Icon name={"warning circle"} size={"big"} color={"purple"}/>:
+                                                <Icon name={"check circle"} size={"big"} color={"green"}/>
+                                            :
+                                            undefined
+                                    }
+                                    <div className={"prediction-label"}>
+                                        <Header as={"h3"} className={"prediction-label-header"}>{prediction ? String(prediction) : "--"}</Header>
+                                        <p className={"prediction-label-text"}>Prediction</p>
+                                    </div>
+                                </>
                         }
                     </div>
                     <div className={"prediction-confidence"}>
                         {
                             isLoading ?
-                            <>
-                                {confidence ? <ConfidenceIcon confidence={confidence}/> : undefined}
-                                <div className={"confidence-label"}>
-                                    <Header as={"h3"} className={"prediction-label-header"}>{prediction ? String(confidence) : "--"}</Header>
-                                    <p className={"prediction-label-text"}>Confidence</p>
-                                </div>
-                            </>
-                            :
-                            <Loader active inline={"centered"} size={"large"}/>
+                                <Loader active inline={"centered"} size={"medium"}/>
+                                :
+                                <>
+                                    {confidence ? <ConfidenceIcon confidence={confidence}/> : undefined}
+                                    <div className={"confidence-label"}>
+                                        <Header as={"h3"} className={"prediction-label-header"}>{prediction ? String(confidence) : "--"}</Header>
+                                        <p className={"prediction-label-text"}>Confidence</p>
+                                    </div>
+                                </>
                         }
                     </div>
                 </div>
