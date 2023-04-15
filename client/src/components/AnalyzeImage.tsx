@@ -129,6 +129,7 @@ function AnalyzeImage() {
                     />
                     <Button
                         className={"analysis-buttons"}
+                        disabled={file === null}
                         onClick={onAnalyzeClick}
                     >
                         <Icon name={"rss"}/>
