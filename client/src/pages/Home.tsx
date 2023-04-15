@@ -1,6 +1,7 @@
 import React from 'react';
 import PageHeader from "../components/HomePageHeader";
-import Footer from "../components/Footer.js";
+// import Footer from "../components/Footer.tsx";
+import Footer from "../components/Footer";
 
 export default function Index() {
     React.useEffect(() => {

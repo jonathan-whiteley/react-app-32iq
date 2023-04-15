@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Container, Divider, Header, Icon, Image, Loader} from "semantic-ui-react";
 
-import {apiServer} from "../utils/api";
+import {apiServer} from "../../utils/api";
 import "./AnalyzeImage.css";
 
 const allowedFileTypes = ["image/png", "image/jpeg", "image/jpg"];

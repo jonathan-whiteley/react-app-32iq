@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import Search from "./components/Search";
 import Liveboard from "./components/Liveboard";
 import {Menu} from "semantic-ui-react";
-import AnalyzeImage from "./components/AnalyzeImage";
+import AnalyzeImage from "./components/AnalyzeImage/AnalyzeImage";
+import About from "./components/About/About";
 
 
 function displayGrid(menuComponent: JSX.Element, applicationComponent: JSX.Element) {
@@ -109,6 +110,11 @@ const Application32IQ = () => {
                     displayGrid(
                         getMenu("patient-dashboard"),
                         <Liveboard />,
+                    )} />
+                <Route path="/about-us" children={() =>
+                    displayGrid(
+                        getMenu("about-us"),
+                        <About />,
                     )} />
             </Switch>
         </Router>
