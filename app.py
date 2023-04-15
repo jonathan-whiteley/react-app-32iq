@@ -48,7 +48,7 @@ def predict_image_file():
         # return render_template("public/templates/result.html", err=error)
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, port=5000, threaded=True)
+    app.run(use_reloader=True, port=3000, threaded=True)
 
 
 # Importing required libs
