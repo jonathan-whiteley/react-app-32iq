@@ -1,13 +1,33 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Container, Divider, Header, Icon, Image} from "semantic-ui-react";
-import uploadImage from "./../assets/img/upload-image.png";
+import {Button, Container, Divider, Header, Icon, Image, Loader} from "semantic-ui-react";
+
+import {apiServer} from "../utils/api";
 import "./AnalyzeImage.css";
 
 const allowedFileTypes = ["image/png", "image/jpeg", "image/jpg"];
 
+const ConfidenceIcon = (props: {
+    confidence: number,
+}) => {
+    const {confidence} = props;
+
+    if (confidence >= 0.9) {
+        return <Icon name={"checkmark"} size={"big"}/>
+    }
+
+    if (confidence >= 0.8) {
+        return <Icon name={"question"} size={"big"}/>
+    }
+
+    return <Icon name={"x"} size={"big"}/>
+}
+
 function AnalyzeImage() {
     const [file, setFile] = React.useState<File | null>(null);
     const [fileDataURL, setFileDataURL] = useState(null);
+    const [prediction, setPrediction] = useState<string>();
+    const [confidence, setConfidence] = useState();
+    const [isLoading, setIsLoading] = useState(false);
 
     const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length > 0) {
@@ -25,6 +45,35 @@ function AnalyzeImage() {
                 }
             }
         }
+    }
+
+    const getPrediction = async () => {
+        const formData = new FormData();
+        formData.append("file", file as Blob);
+        return await apiServer.post(
+            "/detect_abnormality",
+            formData
+        ).then((response) => {
+            console.log(response.data);
+
+            if (response.data.abnormality === 1) {
+                setPrediction("Flagged");
+            }
+
+            if (response.data.abnormality === 0) {
+                setPrediction("Normal");
+            }
+
+            setConfidence(response.data.confidence);
+            setIsLoading(false);
+        }).catch((error) => {
+            console.log(error);
+        });
+    }
+
+    const onAnalyzeClick = () => {
+        setIsLoading(true);
+        getPrediction().then(r => console.log(r));
     }
 
     useEffect(() => {
@@ -53,12 +102,10 @@ function AnalyzeImage() {
     return (
         <div>
             <Container className={"analysis-container"}>
-                {/*<h1>Image Analysis</h1>*/}
                 <div className={"image-container"}>
                     {
                         fileDataURL ?
                         <Image className={"analysis-image"} src={fileDataURL} size='large' fluid/>:
-                        // <Image className={"analysis-image"} src={uploadImage} size='large' fluid/>
                         <Icon name={"file outline"} size={"massive"} color={"grey"}/>
                     }
                 </div>
@@ -79,25 +126,52 @@ function AnalyzeImage() {
                         hidden
                         onChange={onFileChange}
                     />
-                    <Button className={"analysis-buttons"}><Icon name={"rss"}/> Analyze</Button>
+                    <Button
+                        className={"analysis-buttons"}
+                        onClick={onAnalyzeClick}
+                    >
+                        <Icon name={"rss"}/>
+                        Analyze
+                    </Button>
                 </div>
             </Container>
             <Divider/>
             <Container className={"results-container"}>
                 <div className={"results"}>
                     <div className={"prediction-result"}>
-                        <Icon name={"warning circle"} size={"big"} color={"purple"}/>
-                        <div className={"prediction-label"}>
-                            <Header as={"h3"} className={"prediction-label-header"}>Flagged</Header>
-                            <p className={"prediction-label-text"}>Prediction</p>
-                        </div>
+                        {
+                            isLoading ?
+                            <>
+                                {
+                                    prediction ?
+                                        prediction === "Flagged" ?
+                                            <Icon name={"warning circle"} size={"big"} color={"purple"}/>:
+                                            <Icon name={"check circle"} size={"big"} color={"green"}/>
+                                        :
+                                        undefined
+                                }
+                                <div className={"prediction-label"}>
+                                    <Header as={"h3"} className={"prediction-label-header"}>{prediction ? String(prediction) : "--"}</Header>
+                                    <p className={"prediction-label-text"}>Prediction</p>
+                                </div>
+                            </>
+                            :
+                            <Loader active inline={"centered"} size={"large"}/>
+                        }
                     </div>
                     <div className={"prediction-confidence"}>
-                        <Icon name={"checkmark"} size={"big"} />
-                        <div className={"confidence-label"}>
-                            <Header as={"h3"} className={"prediction-label-header"}>0.925</Header>
-                            <p className={"prediction-label-text"}>Confidence</p>
-                        </div>
+                        {
+                            isLoading ?
+                            <>
+                                {confidence ? <ConfidenceIcon confidence={confidence}/> : undefined}
+                                <div className={"confidence-label"}>
+                                    <Header as={"h3"} className={"prediction-label-header"}>{prediction ? String(confidence) : "--"}</Header>
+                                    <p className={"prediction-label-text"}>Confidence</p>
+                                </div>
+                            </>
+                            :
+                            <Loader active inline={"centered"} size={"large"}/>
+                        }
                     </div>
                 </div>
                 <div className={"results-header-div"}>
