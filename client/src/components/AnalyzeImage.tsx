@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Container, Image} from "semantic-ui-react";
+import {Button, Container, Divider, Header, Icon, Image} from "semantic-ui-react";
 import uploadImage from "./../assets/img/upload-image.png";
 import "./AnalyzeImage.css";
 
@@ -53,12 +53,15 @@ function AnalyzeImage() {
     return (
         <div>
             <Container className={"analysis-container"}>
-                <h1>Image Analysis</h1>
-                {
-                    fileDataURL ?
-                    <Image className={"analysis-image"} src={fileDataURL} size='large' fluid/>:
-                    <Image className={"analysis-image"} src={uploadImage} size='large' fluid/>
-                }
+                {/*<h1>Image Analysis</h1>*/}
+                <div className={"image-container"}>
+                    {
+                        fileDataURL ?
+                        <Image className={"analysis-image"} src={fileDataURL} size='large' fluid/>:
+                        // <Image className={"analysis-image"} src={uploadImage} size='large' fluid/>
+                        <Icon name={"file outline"} size={"massive"} color={"grey"}/>
+                    }
+                </div>
                 <div>
                     <Button
                         className={"analysis-buttons"}
@@ -77,6 +80,38 @@ function AnalyzeImage() {
                         onChange={onFileChange}
                     />
                     <Button className={"analysis-buttons"}>Analyze</Button>
+                </div>
+            </Container>
+            <Divider/>
+            <Container className={"results-container"}>
+                <div className={"results"}>
+                    <div className={"prediction-result"}>
+                        <Icon name={"warning circle"} size={"big"} color={"purple"}/>
+                        <div className={"prediction-label"}>
+                            <Header as={"h3"} className={"prediction-label-header"}>Flagged</Header>
+                            <p className={"prediction-label-text"}>Prediction</p>
+                        </div>
+                    </div>
+                    <div className={"prediction-confidence"}>
+                        <Icon name={"checkmark"} size={"big"} />
+                        <div className={"confidence-label"}>
+                            <Header as={"h3"} className={"prediction-label-header"}>0.925</Header>
+                            <p className={"prediction-label-text"}>Confidence</p>
+                        </div>
+                    </div>
+                </div>
+                <div className={"results-header-div"}>
+                    <Header as={"h2"} className={"results-header"}>Prediction Results</Header>
+                    <br/>
+                    <p>
+                        <b>Prediction</b>: a binary classification on whether or not the image uploaded contains a dental abnormality (Flagged or Normal).
+                    </p>
+                    <br/>
+                    <p>
+                        <b>Confidence Score</b>: this measures the degree of confidence 32iQ has in the prediction: (p to 1 with 0 being not certain and 1 being most certain).
+                    </p>
+                    <br/>
+                    <Button className={"save-results-button"}><Icon name={"chevron right"}/> Save Result</Button>
                 </div>
             </Container>
         </div>

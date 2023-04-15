@@ -17,6 +17,10 @@ code {
   text-align: center;
 } */
 
+body {
+    background: #17194b !important;
+}
+
 body.index-page {
     margin: 0;
     font-family: "Poppins", sans-serif;
