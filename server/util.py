@@ -2,6 +2,7 @@ import boto3
 import os
 import settings
 
+
 def download_ludwig_model():
     try:
         AWS_REGION = "us-west-1"
