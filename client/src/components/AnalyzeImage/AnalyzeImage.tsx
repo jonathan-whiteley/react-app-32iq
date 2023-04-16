@@ -102,6 +102,7 @@ function AnalyzeImage() {
 
     return (
         <div>
+        <br></br><br></br>
             <Container className={"analysis-container"}>
                 <div className={"image-container"}>
                     {

@@ -45,7 +45,7 @@ function displayGrid(menuComponent: JSX.Element, applicationComponent: JSX.Eleme
 function getMenu(activeItem: string) {
 
     return (
-<Navbar className={"fixed-top "} color-on-scroll="100" expand="lg">
+<Navbar className={"fixed-top "} expand="lg">
       <Container>
         <div className="navbar-translate">
           <NavbarBrand to="/home" tag={Link} id="navbar-brand">
@@ -246,7 +246,7 @@ const Application32IQ = () => {
                 <Route path="/data-page" children={() =>
                     displayGrid(
                         getMenu("data-page"),
-                        <About />,
+                        <Data />,
                     )} />
             </Switch>
         </Router>
