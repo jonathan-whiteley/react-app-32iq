@@ -1,5 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Container, Divider, Header, Icon, Image, Loader} from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import {
+    Card,
+    CardHeader,
+    CardBody,
+    CardFooter,
+    CardTitle,
+    ListGroupItem,
+    ListGroup,
+    NavLink,
+    Row,
+    Col
+  } from "reactstrap";
+
 
 import {apiServer} from "../../utils/api";
 import "./AnalyzeImage.css";
@@ -188,7 +202,7 @@ function AnalyzeImage() {
                         <b>Confidence Score</b>: this measures the degree of confidence 32iQ has in the prediction: (p to 1 with 0 being not certain and 1 being most certain).
                     </p>
                     <br/>
-                    <Button className={"save-results-button"}><Icon name={"chevron right"}/> Save Result</Button>
+                    <Button className={"save-results-button"} href="/patient-dashboard" > <Icon name={"chevron right"}/> Save Result</Button>
                 </div>
             </Container>
         </div>
