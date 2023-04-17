@@ -2,7 +2,8 @@
   "name": "my-starter-app",
   "version": "0.1.0",
   "engines": {
-    "node": "18.12.1"
+    "node": "18.12.1",
+    "npm": "8.19.2"
   },
   "private": true,
   "dependencies": {
@@ -54,7 +55,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
-    
+
   },
   "browserslist": {
     "production": [
