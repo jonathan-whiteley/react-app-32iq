@@ -27,7 +27,6 @@ venv/
 /venv
 .venv
 .parcel-cache
-/env
 
 npm-debug.log*
 yarn-debug.log*
