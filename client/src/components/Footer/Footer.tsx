@@ -20,13 +20,13 @@ function Footer() {
               <Col md="3">
                   <Nav>
                       <NavItem>
-                          <NavLink to="/" tag={Link}>
+                          <NavLink to="/home" tag={Link}>
                             Home
                           </NavLink>
                       </NavItem>
                       <NavItem>
-                          <NavLink to="/" tag={Link}>
-                            Landing
+                          <NavLink to="/data-page" tag={Link}>
+                            Data
                           </NavLink>
                       </NavItem>
                   </Nav>
