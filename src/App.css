@@ -74,7 +74,7 @@
 	max-width: 140px;
 	padding: 6px 6px;
     background-color: #dedede;
-	-webkit-border-radius: 50%;
+	-webkit-border-radius: 20%;
 	-moz-border-radius: 50%;
 	border-radius: 50%;
 }
@@ -85,7 +85,7 @@ ul.team-icon {
 
 ul.team-icon li{
 	display: inline-block;
-	margin:0 3px;
+	margin:0 0px;
 	-webkit-transition: all 0.25s ease-in-out;
 	-moz-transition: all 0.25s ease-in-out;
 	-ms-transition: all 0.25s ease-in-out;
