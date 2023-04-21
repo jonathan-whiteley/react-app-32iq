@@ -113,7 +113,7 @@ export default function DataPage() {
                 {/* <h5 className="text-on-back">02</h5> */}
                 <h4 className="profile-description text-left">
                 
-                <li>1000 de-identified panoramic radiographs in .jpg format</li>
+                <li>1000 de-identified panoramic radiographs in .jpg file format</li>                
                 <li>Randomly selected from the patient database at the 
                 Tufts University School of Dental Medicine</li>
                 <li>Captured by OP100 Orthopantomograph( Kavo Kerr) and 

@@ -3,7 +3,11 @@ import { SearchEmbed } from '@thoughtspot/visual-embed-sdk/react';
 
 function Search() {
   return (
+    
     <div>
+      <br></br>
+      <br></br>
+      <br></br>
         <SearchEmbed
           frameParams={{width: "100vw" , height: "100vh"}}
           collapseDataSources={true}

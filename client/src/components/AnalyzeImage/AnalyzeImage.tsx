@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+// import 'semantic-ui-css/semantic.min.css'
 import {Button, Container, Divider, Header, Icon, Image, Loader} from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import {
@@ -194,13 +195,14 @@ function AnalyzeImage() {
                 <div className={"results-header-div"}>
                     <Header as={"h2"} className={"results-header"}>Prediction Results</Header>
                     <br/>
-                    <p>
+                    <h3>
                         <b>Prediction</b>: a binary classification on whether or not the image uploaded contains a dental abnormality (Flagged or Normal).
-                    </p>
+                    </h3>
                     <br/>
-                    <p>
-                        <b>Confidence Score</b>: this measures the degree of confidence 32iQ has in the prediction: (p to 1 with 0 being not certain and 1 being most certain).
-                    </p>
+                    <h3>
+                        <b>Confidence Score</b>: 
+                        this measures the degree of confidence 32iQ has in the prediction: (0 to 1 with 0 being not certain and 1 being most certain).
+                    </h3>
                     <br/>
                     <Button className={"save-results-button"} href="/patient-dashboard" > <Icon name={"chevron right"}/> Save Result</Button>
                 </div>
