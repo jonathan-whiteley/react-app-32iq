@@ -2,7 +2,8 @@
 
 server/ludwig_model/
 
-/build
+# /build
+
 
 # dependencies
 /node_modules

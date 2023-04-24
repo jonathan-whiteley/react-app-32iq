@@ -4,7 +4,7 @@ import Application32IQ from "./32iq";
 import "./assets/css/nucleo-icons.css";
 import "./assets/scss/blk-design-system-react.scss";
 import "./assets/demo/demo.css";
-import 'semantic-ui-css/semantic.min.css'
+// import 'semantic-ui-css/semantic.min.css'
 import { init, AuthType } from "@thoughtspot/visual-embed-sdk";
 
 init({
